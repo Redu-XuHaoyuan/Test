@@ -1,5 +1,9 @@
 long = 4
 high = 3
+
+# py-spy record -o profile.json -f speedscope -- python test.py
+# py-spy record -o profile.svg-python test.py
+
 # ChessCar = [[0 for i in range(long)] for j in range(high)]
 ChessCar=[1,0,0,0,1,0,1,0,1,1,1,1]
 ScoreList=list()
@@ -32,11 +36,12 @@ def CheckAround(i,ChessCar):
     return ChessCar
 score = 0
 tag = 1
-while tag:
-    SingleScore = eva()
-    if type(SingleScore)==type(None):
-        tag = 0
-    else:
-        score +=SingleScore
+for i in range(0,1000):
+    while tag:
+        SingleScore = eva()
+        if type(SingleScore)==type(None):
+            tag = 0
+        else:
+            score +=SingleScore
 
-print(score)
+    print(score)
